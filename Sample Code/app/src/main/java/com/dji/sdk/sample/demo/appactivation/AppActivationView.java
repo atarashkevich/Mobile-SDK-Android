@@ -48,8 +48,10 @@ public class AppActivationView  extends BaseAppActivationView {
                                                              @Override
                                                              public void onSuccess(UserAccountState userAccountState) {
                                                                  ToastUtils.setResultToText(accountStateTV,
-                                                                                            "Account State: "
-                                                                                                + userAccountState.name());
+                                                                     String.format("Account State: %s, %s",
+                                                                         userAccountState.name(),
+                                                                         UserAccountManager.getInstance().getUserAccountState()
+                                                                     ));
                                                              }
 
                                                              @Override
